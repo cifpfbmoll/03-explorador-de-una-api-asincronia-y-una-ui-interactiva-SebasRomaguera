@@ -1,30 +1,84 @@
-# 03- Explorador de una API con eventos y una UI interactiva
+# GitHub Explorer - Proyecto Angular
 
-- **Descripción del Proyecto**: Una aplicación web que permite a los usuarios buscar y explorar una API pública. Incluye una interfaz simple para ingresar consultas de búsqueda, mostrar resultados en tarjetas, y manejar estados como carga, errores o resultados vacíos. Esto es similar al cliente de Reddit que vimos en clase, pero enfocado en la API de GitHub (o lo que surja) para practicar conceptos como solicitudes HTTP y manejo de datos asíncronos.
-- **Objetivo**: Ampliar el conocimiento básico de Angular, idealmente para reforzar habilidades en frontend development, API integration y gestión de estado reactivo usando signals.
-- **Requisitos Técnicos**:
-  - **Framework**: Angular ~20.3.0, con énfasis en módulos standalone para componentes reutilizables.
-  - **Características Principales**: Utiliza signals para actualizaciones reactivas, servicios para lógica de negocio, y plantillas Angular para UI dinámica. Añade `HttpClientModule` para manejar solicitudes API.
-  - **Dependencias**: Mantiene paquetes como `@angular/core` y `rxjs`; incluye `@angular/common/http` para API calls. Usa versiones compatibles con el proyecto actual para evitar conflictos.
-  - **API**: GitHub API REST (e.g., `https://api.github.com/search/repositories`), que es gratuita y no requiere autenticación para consultas públicas. Las opciones son diversas: Spotify, Facebook, Instagram, TikTok, Shazam, Youtube, Codewars, etc.
-- **Estructura del Proyecto**:
-  - **Componentes**: Incluye un componente principal como `repo-list.component.ts` (similar a [subreddit-column.component.ts](/reddit-client/src/app/components/subreddit-column.component.ts:0:0-0:0)), con subcomponentes para detalles de repositorios. Añade un `search-bar.component.ts` para la entrada de usuario.
-  - **Servicios**: Un `github.service.ts` (por ejemplo) que encapsula llamadas API, con métodos como `searchRepositories(query: string)` para devolver datos en formato observable.
-  - **Plantillas**: Usa directivas como `@if`, `@for` y eventos para una UI interactiva, con estilos CSS para una apariencia moderna (p. ej., usando clases como `column`, `loading`).
-- **Detalles de la API**: Debes usar, por ejemplo, el endpoint `GET /search/repositories` con parámetros como `q` para la consulta. Ejemplo de llamada: `this.http.get('https://api.github.com/search/repositories', { params: { q: query } })`. Enfatiza el manejo de errores HTTP (e.g., códigos 403 para límites de tasa) y la transformación de respuestas.
-- **Características Adicionales**: Para enriquecer el proyecto, sugiero agregar:
-  - Filtrado de repositorios (por ejemplo por lenguaje o estrellas). La mayoría de APIs que os proprongo tienen algún sistema similar.
-  - Un componente para mostrar detalles de la información al hacer clic.
-  - Integración con notificaciones usando signals para actualizaciones en tiempo real.
- 
-  # Formato de entrega:
+## 📦 Archivos Creados
 
-  - Vuestra propuesta de proyecto y documentación del mismo.
-  - Para la generación de la documentación está permitida el uso (pero no el abuso) de algunas IAs siempre y cuando reviséis lo que entregáis.
-  - El código fuente del proyecto.
-  - Algunas imágenes del funcionamiento de vuestro proyecto en local o en github pages (esto último es totalmente voluntario).
-  - 
- 
- # Fecha de entrega
+### Configuración del Proyecto
+- `package.json` - Configuración de dependencias y scripts
+- `angular.json` - Configuración de Angular CLI
+- `tsconfig.json` - Configuración de TypeScript
+- `tsconfig.app.json` - Configuración de TypeScript para la aplicación
+- `.gitignore` - Archivos a ignorar en Git
 
-  - El lunes 3 de noviembre a las 23:59 h.
+### Código Fuente (src/)
+- `src/index.html` - Página HTML principal
+- `src/main.ts` - Punto de entrada de la aplicación
+- `src/styles.css` - Estilos globales
+
+### Componentes (src/app/)
+- `src/app/app.component.ts` - Componente raíz
+- `src/app/components/search-bar/search-bar.component.ts` - Barra de búsqueda con filtros
+- `src/app/components/repo-list/repo-list.component.ts` - Lista de repositorios
+- `src/app/components/repo-card/repo-card.component.ts` - Tarjetas de repositorios
+
+### Servicios y Modelos
+- `src/app/services/github.service.ts` - Servicio para llamadas a la API de GitHub
+- `src/app/models/repository.model.ts` - Interfaces TypeScript
+
+### Documentación
+- `DOCUMENTACION.md` - Documentación técnica completa
+- `GUIA_USO.md` - Guía de uso y casos de prueba
+- `README.md` - Este archivo
+
+**Total: 16 archivos creados**
+
+---
+
+## 📚 Paquetes y Dependencias Instalados
+
+### Dependencias de Producción (dependencies)
+```json
+{
+  "@angular/animations": "^20.3.0",
+  "@angular/common": "^20.3.0",
+  "@angular/compiler": "^20.3.0",
+  "@angular/core": "^20.3.0",
+  "@angular/forms": "^20.3.0",
+  "@angular/platform-browser": "^20.3.0",
+  "@angular/platform-browser-dynamic": "^20.3.0",
+  "@angular/router": "^20.3.0",
+  "rxjs": "~7.8.0",
+  "tslib": "^2.3.0",
+  "zone.js": "~0.15.0"
+}
+```
+
+### Dependencias de Desarrollo (devDependencies)
+```json
+{
+  "@angular-devkit/build-angular": "^20.3.0",
+  "@angular/cli": "^20.3.0",
+  "@angular/compiler-cli": "^20.3.0",
+  "@types/node": "^20.11.0",
+  "typescript": "~5.8.0"
+}
+```
+
+**Total de paquetes instalados: 860 paquetes** (incluyendo dependencias transitivas)
+
+---
+
+## 🚀 Scripts Disponibles
+
+- `npm start` - Inicia el servidor de desarrollo
+- `npm run build` - Compila el proyecto para producción
+- `npm run watch` - Compila en modo watch
+- `npm test` - Ejecuta las pruebas
+
+---
+
+## ✅ Estado del Proyecto
+
+✔️ Proyecto configurado  
+✔️ Dependencias instaladas  
+✔️ Aplicación funcionando en http://localhost:4200/  
+✔️ Sin vulnerabilidades detectadas
